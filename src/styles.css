@@ -119,3 +119,121 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.lift {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.lift:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in oklab, var(--color-primary) 45%, var(--color-border));
+  box-shadow: 0 18px 40px -24px color-mix(in oklab, var(--color-primary) 55%, transparent);
+}
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.prose-post {
+  color: var(--color-muted-foreground);
+  line-height: 1.75;
+}
+.prose-post h2 {
+  color: var(--color-foreground);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+.prose-post h3 {
+  color: var(--color-foreground);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.prose-post p {
+  margin-bottom: 1.1rem;
+}
+.prose-post ul {
+  margin: 0 0 1.1rem 0;
+  padding: 0;
+  list-style: none;
+}
+.prose-post li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.prose-post li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  height: 0.25rem;
+  width: 0.25rem;
+  border-radius: 9999px;
+  background-color: var(--color-primary);
+}
+.prose-post strong {
+  color: var(--color-foreground);
+  font-weight: 600;
+}
+.prose-post code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background-color: var(--color-subtle);
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.35rem;
+}
+.prose-post a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}

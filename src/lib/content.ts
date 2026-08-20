@@ -2,7 +2,7 @@ export type Lang = "en" | "pl";
 
 export const content = {
   en: {
-    nav: { about: "About", experience: "Experience", stack: "Stack", contact: "Contact" },
+    nav: { about: "About", experience: "Experience", projects: "Projects", stack: "Stack", blog: "Blog", contact: "Contact" },
     hero: {
       status: "Open to new opportunities",
       title: "Damian Wilusz",
@@ -66,6 +66,42 @@ export const content = {
         },
       ],
     },
+    projects: {
+      title: "Projects",
+      subtitle: "Placeholder entries — real case studies coming soon.",
+      cta: "View project",
+      items: [
+        {
+          name: "Project Placeholder One",
+          year: "2026",
+          summary:
+            "Placeholder description for an end-to-end test automation suite covering UI and API flows.",
+          tags: ["Playwright", "TypeScript", "CI"],
+        },
+        {
+          name: "Project Placeholder Two",
+          year: "2025",
+          summary:
+            "Placeholder description for a Bash-driven installation testing harness running on clean containers.",
+          tags: ["Bash", "Docker", "Linux"],
+        },
+        {
+          name: "Project Placeholder Three",
+          year: "2025",
+          summary:
+            "Placeholder description for a small Laravel service used to collect and triage bug reports.",
+          tags: ["PHP", "Laravel", "MySQL"],
+        },
+      ],
+    },
+    blog: {
+      title: "Blog",
+      subtitle: "Notes on testing, automation and shipping stable releases.",
+      all: "All posts",
+      back: "Back to blog",
+      empty: "No posts yet.",
+      read: "Read",
+    },
     stack: {
       title: "Stack",
       subtitle: "Tools and technologies I use every day.",
@@ -80,11 +116,11 @@ export const content = {
       body: "Have a product that needs a second pair of eyes — or a QA process that needs structure? Drop me a line.",
       cta: "Send an email",
     },
-    footer: "Built in Rzeszów, Poland.",
-    theme: { light: "Light", dark: "Dark" },
+    footer: { built: "Built with", place: "in Rzeszów, Poland." },
+    theme: { system: "System", light: "Light", dark: "Dark" },
   },
   pl: {
-    nav: { about: "O mnie", experience: "Doświadczenie", stack: "Technologie", contact: "Kontakt" },
+    nav: { about: "O mnie", experience: "Doświadczenie", projects: "Projekty", stack: "Technologie", blog: "Blog", contact: "Kontakt" },
     hero: {
       status: "Otwarty na nowe możliwości",
       title: "Damian Wilusz",
@@ -148,6 +184,42 @@ export const content = {
         },
       ],
     },
+    projects: {
+      title: "Projekty",
+      subtitle: "Wpisy poglądowe — prawdziwe case studies wkrótce.",
+      cta: "Zobacz projekt",
+      items: [
+        {
+          name: "Projekt przykładowy pierwszy",
+          year: "2026",
+          summary:
+            "Poglądowy opis zestawu testów end-to-end pokrywających przepływy UI oraz API.",
+          tags: ["Playwright", "TypeScript", "CI"],
+        },
+        {
+          name: "Projekt przykładowy drugi",
+          year: "2025",
+          summary:
+            "Poglądowy opis narzędzia w Bashu do testów instalacji na czystych kontenerach.",
+          tags: ["Bash", "Docker", "Linux"],
+        },
+        {
+          name: "Projekt przykładowy trzeci",
+          year: "2025",
+          summary:
+            "Poglądowy opis niewielkiej usługi w Laravelu do zbierania i triage'u zgłoszeń błędów.",
+          tags: ["PHP", "Laravel", "MySQL"],
+        },
+      ],
+    },
+    blog: {
+      title: "Blog",
+      subtitle: "Notatki o testowaniu, automatyzacji i stabilnych wydaniach.",
+      all: "Wszystkie wpisy",
+      back: "Wróć na bloga",
+      empty: "Brak wpisów.",
+      read: "Czytaj",
+    },
     stack: {
       title: "Technologie",
       subtitle: "Narzędzia, których używam na co dzień.",
@@ -162,8 +234,8 @@ export const content = {
       body: "Masz produkt, który potrzebuje drugiej pary oczu — albo proces QA, który wymaga uporządkowania? Napisz.",
       cta: "Wyślij e-mail",
     },
-    footer: "Tworzone w Rzeszowie, Polska.",
-    theme: { light: "Jasny", dark: "Ciemny" },
+    footer: { built: "Tworzone z", place: "w Rzeszowie, Polska." },
+    theme: { system: "Systemowy", light: "Jasny", dark: "Ciemny" },
   },
 } as const;
 
