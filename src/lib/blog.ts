@@ -21,7 +21,7 @@ function parseFrontmatter(raw: string) {
   const match = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(raw);
   if (!match) return { data: {} as Record<string, string>, body: raw };
   const data: Record<string, string> = {};
-  for (const line of match[1].split(/\r?\n/)) {
+  for (const line of (match[1] ?? "").split(/\r?\n/)) {
     const idx = line.indexOf(":");
     if (idx === -1) continue;
     data[line.slice(0, idx).trim()] = line
@@ -46,12 +46,12 @@ export const posts: Post[] = Object.entries(files)
     const { data, body } = parseFrontmatter(raw);
     const fallbackSlug = path.split("/").pop()!.replace(/\.[a-z]{2}\.md$/, "");
     return {
-      slug: data.slug ?? fallbackSlug,
-      lang: (data.lang === "pl" ? "pl" : "en") as Lang,
-      title: data.title ?? fallbackSlug,
-      date: data.date ?? "",
-      excerpt: data.excerpt ?? "",
-      tags: parseTags(data.tags),
+      slug: data["slug"] ?? fallbackSlug,
+      lang: (data["lang"] === "pl" ? "pl" : "en") as Lang,
+      title: data["title"] ?? fallbackSlug,
+      date: data["date"] ?? "",
+      excerpt: data["excerpt"] ?? "",
+      tags: parseTags(data["tags"]),
       body,
     };
   })
